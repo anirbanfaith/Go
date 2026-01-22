@@ -23,7 +23,7 @@ func main() {
 	//21 jan 2026, learned if & else and here is the try
 	// == exact value
 	// also i can declare a value directly in if construct
-	paymentstatus := 1
+	paymentstatus := 0
 
 	if paymentstatus == 1 {
 		fmt.Println("Payment received")
