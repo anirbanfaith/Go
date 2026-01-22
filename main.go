@@ -45,4 +45,26 @@ func main() {
 		fmt.Println("AWB Generated")
 	}
 
+	//learned maps & range results name, address, email-id, mobile-number
+	m := make(map[string]string)
+
+	m["od"] = "Order details"
+	m2 := map[string]string{"Name:": "John Doe"}
+
+	for k, v := range m2 {
+		fmt.Println(m["od"])
+		fmt.Println(k, v)
+	}
+
+	m3 := map[string]string{"Address:": "12/3, 345 street, City, State, Country"}
+
+	for k, v := range m3 {
+		fmt.Println(k, v)
+	}
+
+	m4 := map[string]int{"Zipcode:": 100001}
+	for k, v := range m4 {
+		fmt.Println(k, v)
+	}
+
 }
