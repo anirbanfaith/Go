@@ -94,4 +94,9 @@ func main() {
 		fmt.Println(k, v)
 	}
 
+	m7 := map[string]int{"HSN code:": 123456}
+	for k, v := range m7 {
+		fmt.Println(k, v)
+	}
+
 }
