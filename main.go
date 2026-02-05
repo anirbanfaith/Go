@@ -19,7 +19,7 @@ func (r razorpay) pay(amount float32) {
 func main() {
 
 	//shorthand variable
-	fees := 798.86
+	fees := 998.86
 
 	//constant value rewrite = no
 	const gstcode = 18
@@ -89,7 +89,7 @@ func main() {
 		fmt.Println(k, v)
 	}
 
-	m6 := map[string]int{"item value:": 89}
+	m6 := map[string]int{"item value:": 4000}
 	for k, v := range m6 {
 		fmt.Println(k, v)
 	}
