@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// Learned to make struct and make it work
 type Payment struct{}
 
 func (p Payment) makePayment(amount float32) {
