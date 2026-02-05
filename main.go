@@ -67,8 +67,13 @@ func main() {
 		fmt.Println(k, v)
 	}
 
-	m5 := map[string]string{"item": "item name"}
+	m5 := map[string]string{"item:": "item name"}
 	for k, v := range m5 {
+		fmt.Println(k, v)
+	}
+
+	m6 := map[string]int{"item value:": 89}
+	for k, v := range m6 {
 		fmt.Println(k, v)
 	}
 
