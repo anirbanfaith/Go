@@ -2,6 +2,19 @@ package main
 
 import "fmt"
 
+type Payment struct{}
+
+func (p Payment) makePayment(amount float32) {
+	razorpayPaymentGw := razorpay{}
+	razorpayPaymentGw.pay(amount)
+}
+
+type razorpay struct{}
+
+func (r razorpay) pay(amount float32) {
+	fmt.Println("making payment using RazorPay", amount)
+}
+
 func main() {
 
 	//shorthand variable
@@ -19,6 +32,9 @@ func main() {
 	fmt.Println("GST:", gstcode, "%")
 	fmt.Println("GST Amount:", gstamount)
 	fmt.Println("Total:", total)
+
+	newPayment := Payment{}
+	newPayment.makePayment(float32(total))
 
 	//21 jan 2026, learned if & else and here is the try
 	// == exact value
