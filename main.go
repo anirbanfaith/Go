@@ -111,7 +111,7 @@ func (googlepay) pay(amount float32) {
 type phonepay struct{}
 
 func (phonepay) pay(amount float32) {
-	fmt.Println("MAke payment using PhonePay", amount)
+	fmt.Println("Make payment using PhonePay", amount)
 }
 
 // paymet struct here with interface
