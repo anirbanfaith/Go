@@ -100,7 +100,7 @@ func (r razorpay) pay(amount float32) {
 
 type Googlepay struct{}
 
-func (G Googlepay) pay(amount float32) {
+func (g Googlepay) pay(amount float32) {
 	fmt.Println("make payment via Google Pay", amount)
 }
 
