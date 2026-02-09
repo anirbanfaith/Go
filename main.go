@@ -20,6 +20,7 @@ func main() {
 	fmt.Println("GST Amount:", gstamount)
 	fmt.Println("Total:", total)
 
+	//used make payment feature
 	newPayment := Payment{}
 	newPayment.makePayment(float32(total))
 
