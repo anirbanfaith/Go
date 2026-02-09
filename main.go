@@ -2,20 +2,6 @@ package main
 
 import "fmt"
 
-// Learned to make struct and make it work
-type Payment struct{}
-
-func (p Payment) makePayment(amount float32) {
-	razorpayPaymentGw := razorpay{}
-	razorpayPaymentGw.pay(amount)
-}
-
-type razorpay struct{}
-
-func (r razorpay) pay(amount float32) {
-	fmt.Println("making payment using RazorPay", amount)
-}
-
 func main() {
 
 	//shorthand variable
@@ -99,4 +85,18 @@ func main() {
 		fmt.Println(k, v)
 	}
 
+}
+
+// Learned to make struct and make it work
+type Payment struct{}
+
+func (p Payment) makePayment(amount float32) {
+	razorpayPaymentGw := razorpay{}
+	razorpayPaymentGw.pay(amount)
+}
+
+type razorpay struct{}
+
+func (r razorpay) pay(amount float32) {
+	fmt.Println("making payment using RazorPay", amount)
 }
