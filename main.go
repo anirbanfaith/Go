@@ -21,9 +21,9 @@ func main() {
 	fmt.Println("Total:", total)
 
 	//used struct make payment feature
-	razorpayPaymentGW := razorpay{}
+	PaymentGW := Googlepay{}
 	newPayment := Payment{
-		gateway: razorpayPaymentGW,
+		gateway: PaymentGW,
 	}
 	newPayment.makePayment(float32(total))
 
@@ -92,10 +92,15 @@ func main() {
 }
 
 // Learned to make struct and make it work with interfaces
-type razorpay struct{}
+//type razorpay struct{}
 
-func (r razorpay) pay(amount float32) {
-	fmt.Println("making payment using RazorPay", amount)
+//func (r razorpay) pay(amount float32) {
+//	fmt.Println("making payment using RazorPay", amount)}
+
+type Googlepay struct{}
+
+func (G Googlepay) pay(amount float32) {
+	fmt.Println("make payment via Google Pay", amount)
 }
 
 type Payment struct {
