@@ -21,7 +21,10 @@ func main() {
 	fmt.Println("Total:", total)
 
 	//used struct make payment feature
-	newPayment := Payment{}
+	razorpayPaymentGW := razorpay{}
+	newPayment := Payment{
+		gateway: razorpayPaymentGW,
+	}
 	newPayment.makePayment(float32(total))
 
 	//21 jan 2026, learned if & else and here is the try
@@ -88,16 +91,21 @@ func main() {
 
 }
 
-// Learned to make struct and make it work
-type Payment struct{}
+// Learned to make struct and make it work with interfaces
+type Payment struct {
+	gateway paymenter
+}
 
 func (p Payment) makePayment(amount float32) {
-	razorpayPaymentGw := razorpay{}
-	razorpayPaymentGw.pay(amount)
+	p.gateway.pay(amount)
 }
 
 type razorpay struct{}
 
 func (r razorpay) pay(amount float32) {
 	fmt.Println("making payment using RazorPay", amount)
+}
+
+type paymenter interface {
+	pay(amount float32)
 }
