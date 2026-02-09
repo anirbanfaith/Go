@@ -92,18 +92,18 @@ func main() {
 }
 
 // Learned to make struct and make it work with interfaces
+type razorpay struct{}
+
+func (r razorpay) pay(amount float32) {
+	fmt.Println("making payment using RazorPay", amount)
+}
+
 type Payment struct {
 	gateway paymenter
 }
 
 func (p Payment) makePayment(amount float32) {
 	p.gateway.pay(amount)
-}
-
-type razorpay struct{}
-
-func (r razorpay) pay(amount float32) {
-	fmt.Println("making payment using RazorPay", amount)
 }
 
 type paymenter interface {
