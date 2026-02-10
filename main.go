@@ -94,7 +94,7 @@ func main() {
 	//used enums for change the order status
 	chnageOrderStatus(In_transit)
 
-	chnageOrderDelivered(Sunday)
+	chnageOrderDelivered(Saturday)
 
 }
 
