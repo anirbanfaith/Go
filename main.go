@@ -91,6 +91,7 @@ func main() {
 		fmt.Println(k, v)
 	}
 
+	//used enums for change the order status
 	chnageOrderStatus("In_transit")
 
 }
