@@ -131,6 +131,7 @@ type paymenter interface {
 
 //learnig enums
 
+// used custom type here
 type OrderStatus int
 
 const (
