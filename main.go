@@ -94,6 +94,8 @@ func main() {
 	//used enums for change the order status
 	chnageOrderStatus(In_transit)
 
+	chnageOrderDelivered(Sunday)
+
 }
 
 // Learned to make struct and make it work with interfaces
@@ -146,4 +148,20 @@ const (
 
 func chnageOrderStatus(status OrderStatus) {
 	fmt.Println("Order Status", status)
+}
+
+type Delivered_on string
+
+const (
+	Sunday    Delivered_on = "sunday"
+	Monday                 = "monday"
+	Tuesday                = "tuesday"
+	Wednesday              = "wednesday"
+	Thursday               = "thursday"
+	Friday                 = "friday"
+	Saturday               = "saturday"
+)
+
+func chnageOrderDelivered(status Delivered_on) {
+	fmt.Println("Order Delivered On", status)
 }
