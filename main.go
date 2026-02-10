@@ -140,6 +140,8 @@ const (
 	In_transit
 	Reached_Destination
 	Delivered
+	Undelivered
+	RTO
 )
 
 func chnageOrderStatus(status string) {
