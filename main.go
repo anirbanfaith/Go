@@ -92,7 +92,7 @@ func main() {
 	}
 
 	//used enums for change the order status
-	chnageOrderStatus("In_transit")
+	chnageOrderStatus(In_transit)
 
 }
 
@@ -144,6 +144,6 @@ const (
 	RTO
 )
 
-func chnageOrderStatus(status string) {
+func chnageOrderStatus(status OrderStatus) {
 	fmt.Println("Order Status", status)
 }
