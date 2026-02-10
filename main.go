@@ -91,6 +91,8 @@ func main() {
 		fmt.Println(k, v)
 	}
 
+	chnageOrderStatus("In_transit")
+
 }
 
 // Learned to make struct and make it work with interfaces
@@ -125,4 +127,19 @@ func (p Payment) makePayment(amount float32) {
 
 type paymenter interface {
 	pay(amount float32)
+}
+
+//learnig enums
+
+type OrderStatus int
+
+const (
+	Picked_Up OrderStatus = iota
+	In_transit
+	Reached_Destination
+	Delivered
+)
+
+func chnageOrderStatus(status string) {
+	fmt.Println("Order Status", status)
 }
