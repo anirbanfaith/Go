@@ -105,7 +105,7 @@ func main() {
 	wg.Wait()
 
 	//used enums for change the order status
-	chnageOrderStatus(In_transit)
+	chnageOrderStatus(Delivered)
 
 	chnageOrderDelivered(Friday)
 
