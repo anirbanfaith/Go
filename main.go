@@ -163,6 +163,7 @@ func chnageOrderStatus(status OrderStatus) {
 	fmt.Println("Order Status", status)
 }
 
+// used enums with string with custom type
 type Delivered_on string
 
 const (
