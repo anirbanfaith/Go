@@ -99,7 +99,7 @@ func main() {
 
 	for i := 0; i <= 5; i++ {
 		wg.Add(1)
-		go task(i, &wg)
+		go fetch(i, &wg)
 	}
 
 	wg.Wait()
@@ -180,7 +180,7 @@ func chnageOrderDelivered(status Delivered_on) {
 }
 
 // Order status fetching from carrier
-func task(id int, w *sync.WaitGroup) {
+func fetch(id int, w *sync.WaitGroup) {
 	defer w.Done()
 	fmt.Println("Fetching Tracking Status", id)
 }
