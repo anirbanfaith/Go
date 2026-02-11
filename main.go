@@ -94,19 +94,20 @@ func main() {
 		fmt.Println(k, v)
 	}
 
-	//used enums for change the order status
-	chnageOrderStatus(In_transit)
-
-	chnageOrderDelivered(Friday)
-
+	// go routines for check the order status from carrier
 	var wg sync.WaitGroup
 
-	for i := 0; i <= 10; i++ {
+	for i := 0; i <= 5; i++ {
 		wg.Add(1)
 		go task(i, &wg)
 	}
 
 	wg.Wait()
+
+	//used enums for change the order status
+	chnageOrderStatus(In_transit)
+
+	chnageOrderDelivered(Friday)
 
 }
 
@@ -178,7 +179,8 @@ func chnageOrderDelivered(status Delivered_on) {
 	fmt.Println("Order Delivered On", status)
 }
 
+// Order status fetching from carrier
 func task(id int, w *sync.WaitGroup) {
 	defer w.Done()
-	fmt.Println("doing task", id)
+	fmt.Println("Fetching Tracking Status", id)
 }
