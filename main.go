@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+)
 
 func main() {
 
@@ -96,6 +99,15 @@ func main() {
 
 	chnageOrderDelivered(Friday)
 
+	var wg sync.WaitGroup
+
+	for i := 0; i <= 10; i++ {
+		wg.Add(1)
+		go task(i, &wg)
+	}
+
+	wg.Wait()
+
 }
 
 // Learned to make struct and make it work with interfaces
@@ -164,4 +176,9 @@ const (
 
 func chnageOrderDelivered(status Delivered_on) {
 	fmt.Println("Order Delivered On", status)
+}
+
+func task(id int, w *sync.WaitGroup) {
+	defer w.Done()
+	fmt.Println("doing task", id)
 }
