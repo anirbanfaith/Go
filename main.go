@@ -199,5 +199,5 @@ const (
 )
 
 func changeOrderLocation(status Current_location) {
-	fmt.Println("Reached", status, time.Date(time.Now(int).UTC(int).Nanosecond(int)))
+	fmt.Println("Reached", status, "Date:", time.Now().Format(time.DateOnly))
 }
