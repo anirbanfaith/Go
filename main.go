@@ -107,7 +107,7 @@ func main() {
 	//used enums for change the order status
 	chnageOrderStatus(Picked_Up)
 
-	chnageOrderDelivered(Monday)
+	chnageOrderPickedup(Monday)
 
 }
 
@@ -164,20 +164,20 @@ func chnageOrderStatus(status OrderStatus) {
 }
 
 // used enums with string with custom type
-type Delivered_on string
+type Picked_on string
 
 const (
-	Sunday    Delivered_on = "sunday"
-	Monday                 = "monday"
-	Tuesday                = "tuesday"
-	Wednesday              = "wednesday"
-	Thursday               = "thursday"
-	Friday                 = "friday"
-	Saturday               = "saturday"
+	Sunday    Picked_on = "sunday"
+	Monday              = "monday"
+	Tuesday             = "tuesday"
+	Wednesday           = "wednesday"
+	Thursday            = "thursday"
+	Friday              = "friday"
+	Saturday            = "saturday"
 )
 
-func chnageOrderDelivered(status Delivered_on) {
-	fmt.Println("Order Delivered On", status)
+func chnageOrderPickedup(status Picked_on) {
+	fmt.Println("Order Picked On", status)
 }
 
 // Order status fetching from carrier
