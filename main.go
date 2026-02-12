@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sync"
+	"time"
 )
 
 func main() {
@@ -105,9 +106,11 @@ func main() {
 	wg.Wait()
 
 	//used enums for change the order status
-	chnageOrderStatus(Picked_Up)
+	chnageOrderStatus(In_transit)
 
 	chnageOrderPickedup(Monday)
+
+	changeOrderLocation(blr_03)
 
 }
 
@@ -184,4 +187,17 @@ func chnageOrderPickedup(status Picked_on) {
 func fetch(id int, w *sync.WaitGroup) {
 	defer w.Done()
 	fmt.Println("Fetching Tracking Status", id)
+}
+
+type Current_location string
+
+const (
+	blr_03 Current_location = "blr_3"
+	blr_04                  = "blr_4"
+	del_02                  = "del_2"
+	del_05                  = "del_5"
+)
+
+func changeOrderLocation(status Current_location) {
+	fmt.Println("Reached", status, time.Date(time.Now(int).UTC(int).Nanosecond(int)))
 }
