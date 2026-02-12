@@ -112,7 +112,7 @@ func main() {
 
 	changeOrderLocation(blr_03)
 
-	changeOrderLocation(del_05)
+	changeOrderLocation(blr_04)
 
 }
 
