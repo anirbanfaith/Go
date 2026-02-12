@@ -112,6 +112,8 @@ func main() {
 
 	changeOrderLocation(blr_03)
 
+	changeOrderLocation(del_05)
+
 }
 
 // Learned to make struct and make it work with interfaces
