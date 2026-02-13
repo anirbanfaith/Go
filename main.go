@@ -60,11 +60,15 @@ func main() {
 
 	emailChan := make(chan string)
 
-	emailChan <- "Order booked"
+	go processEml(emailChan)
 
-	eml := <-emailChan
+	emailChan <- "Booking status email to the customer"
 
-	fmt.Println(eml)
+	// emailChan <- "Order booked"
+
+	// eml := <-emailChan
+
+	// fmt.Println(eml)
 
 	//learned maps & range results name, address, email-id, mobile-number
 	m := make(map[string]string)
@@ -210,4 +214,8 @@ const (
 
 func changeOrderLocation(status Current_location) {
 	fmt.Println("Reached", status, "Date:", time.Now().Format(time.DateOnly))
+}
+
+func processEml(emailChan chan string) {
+	fmt.Println("Sending", <-emailChan)
 }
