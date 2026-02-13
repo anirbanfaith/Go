@@ -65,12 +65,6 @@ func main() {
 
 	emailChan <- "Booking status email to the customer"
 
-	// emailChan <- "Order booked"
-
-	// eml := <-emailChan
-
-	// fmt.Println(eml)
-
 	//learned maps & range results name, address, email-id, mobile-number
 	m := make(map[string]string)
 
