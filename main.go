@@ -58,6 +58,14 @@ func main() {
 		fmt.Println("AWB Generated")
 	}
 
+	emailChan := make(chan string)
+
+	emailChan <- "Order booked"
+
+	eml := <-emailChan
+
+	fmt.Println(eml)
+
 	//learned maps & range results name, address, email-id, mobile-number
 	m := make(map[string]string)
 
