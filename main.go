@@ -58,6 +58,7 @@ func main() {
 		fmt.Println("AWB Generated")
 	}
 
+	//made an email channel to send the end user about booking
 	emailChan := make(chan string)
 
 	go processEml(emailChan)
