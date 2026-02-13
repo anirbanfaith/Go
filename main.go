@@ -217,6 +217,8 @@ func changeOrderLocation(status Current_location) {
 	fmt.Println("Reached", status, "Date:", time.Now().Format(time.DateOnly))
 }
 
+//email channel function
+
 func processEml(emailChan chan string) {
 	fmt.Println("Sending", <-emailChan)
 }
